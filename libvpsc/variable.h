@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libvpsc - A solver for the problem of Variable Placement with 
@@ -25,6 +25,8 @@
 #include <vector>
 #include <iostream>
 
+#include "dllexport.h"
+
 #include "libvpsc/block.h"
 #include "libvpsc/assertions.h"
 
@@ -41,7 +43,7 @@ typedef std::vector<Constraint*> Constraints;
  * much the variable wants to be at its ideal position.  After solving the 
  * problem you can read back the final position for the variable.
 */
-class Variable
+class VPSC_EXPORT Variable
 {
 	friend std::ostream& operator <<(std::ostream &os, const Variable &v);
 	friend class Block;

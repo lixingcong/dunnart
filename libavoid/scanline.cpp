@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -30,6 +30,10 @@
 #include "libavoid/connector.h"
 #include "libavoid/junction.h"
 #include "libavoid/router.h"
+
+#ifdef _MSC_VER
+#include <algorithm>
+#endif
 
 namespace Avoid {
 

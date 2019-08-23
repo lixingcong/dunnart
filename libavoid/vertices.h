@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -34,6 +34,7 @@
 #include <utility>
 
 #include "libavoid/geomtypes.h"
+#include "libavoid/dllexport.h"
 
 namespace Avoid {
 
@@ -48,7 +49,7 @@ typedef unsigned int ConnDirFlags;
 typedef unsigned short VertIDProps;
 
 
-class VertID
+class AVOID_EXPORT VertID
 {
     public:
         unsigned int objID;

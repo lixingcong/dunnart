@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libtopology - Classes used in generating and managing topology constraints.
@@ -25,6 +25,7 @@
 
 #include "libcola/cola.h"
 #include "libtopology/topology_graph.h"
+#include "libtopology/dllexport.h"
 
 /**
  * @namespace topology
@@ -41,7 +42,7 @@ namespace topology {
  *  You should instantiate this class with a given set of nodes and edges to
  *  preserve and pass it to cola::ConstrainedFDLayout::setTopology().
  */
-class ColaTopologyAddon : public cola::TopologyAddonInterface
+class TOPOLOGY_EXPORT ColaTopologyAddon : public cola::TopologyAddonInterface
 {
     public:
         /**

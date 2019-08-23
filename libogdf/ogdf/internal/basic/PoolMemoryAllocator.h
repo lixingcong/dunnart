@@ -1,4 +1,4 @@
-/*
+﻿/*
  * $Revision: 1.8 $
  * 
  * last checkin:
@@ -205,7 +205,7 @@ private:
 		MemElemPtr &pRestTail,
 		int &nRest);
 
-	static void *fillPool(MemElemPtr &pFreeBytes, __uint16 nBytes);
+	static OGDF_EXPORT void *fillPool(MemElemPtr &pFreeBytes, __uint16 nBytes);
 
 	static MemElemPtr allocateBlock(__uint16 nBytes);
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * $Revision: 1.17 $
  * 
  * last checkin:
@@ -632,8 +632,8 @@ public:
 		OGDF_ASSERT(it1.valid() && it2.valid() && it1 != it2)
 		ListElement<E> *pX = it1, *pY = it2;
 
-		swap(pX->m_next,pY->m_next);
-		swap(pX->m_prev,pY->m_prev);
+		std::swap(pX->m_next,pY->m_next);
+		std::swap(pX->m_prev,pY->m_prev);
 
 		if(pX->m_next == pX) {
 			pX->m_next = pY; pY->m_prev = pX;

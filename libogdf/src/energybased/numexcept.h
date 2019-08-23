@@ -1,4 +1,4 @@
-/*
+﻿/*
  * $Revision: 1.2 $
  * 
  * last checkin:
@@ -54,7 +54,7 @@ namespace ogdf {
 // reasonable numeric and logic calculations are possible any more
 //---------------------------------------------------------------------------
 
-class numexcept  
+class OGDF_EXPORT numexcept
 {
   public:
       numexcept();                    //constructor

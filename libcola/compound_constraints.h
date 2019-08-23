@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -28,6 +28,7 @@
 
 #include "libcola/sparse_matrix.h"
 #include "libcola/unused.h"
+#include "libcola/dllexport.h"
 
 namespace vpsc {
     class Constraint;
@@ -88,7 +89,7 @@ static const unsigned int PRIORITY_NONOVERLAP =
  * If a mapping for a particular value is not set, it is considered to be
  * equal on both sides of the mapping.
  */
-class VariableIDMap
+class COLA_EXPORT VariableIDMap
 {
     public:
         VariableIDMap();
@@ -141,7 +142,7 @@ typedef std::vector<SubConstraintInfo *> SubConstraintInfoList;
  * even some extra terms for the quadratic objective function used
  * in the gradient projection solver.
  */
-class CompoundConstraint {
+class COLA_EXPORT CompoundConstraint {
 public:
     CompoundConstraint(vpsc::Dim primaryDim, 
             unsigned int priority = DEFAULT_CONSTRAINT_PRIORITY);
@@ -340,7 +341,7 @@ class BoundaryConstraint : public CompoundConstraint
  * as "fixed".  When fixed, the position variable will be given a higher 
  * weight to attempt to keep it at that position.
  */
-class AlignmentConstraint : public CompoundConstraint 
+class COLA_EXPORT AlignmentConstraint : public CompoundConstraint
 {
     public:
         /**
@@ -427,7 +428,7 @@ class AlignmentConstraint : public CompoundConstraint
  *       for the non-equality case, there you need to keep the same gap value
  *       but reverse the order of the variables passed to the constructor.
  */
-class SeparationConstraint : public CompoundConstraint 
+class COLA_EXPORT SeparationConstraint : public CompoundConstraint
 {
     public:
         /**
@@ -494,7 +495,7 @@ class SeparationConstraint : public CompoundConstraint
 //
 // Orthogonal edges must have their end points aligned horizontally or 
 // vertically
-class OrthogonalEdgeConstraint : public CompoundConstraint 
+class COLA_EXPORT OrthogonalEdgeConstraint : public CompoundConstraint
 {
     public:
         OrthogonalEdgeConstraint(const vpsc::Dim dim, unsigned l, unsigned r);
@@ -529,7 +530,7 @@ class OrthogonalEdgeConstraint : public CompoundConstraint
  * This is a way of arranging a group of alignment lines to be equally 
  * distributed, or given a uniform minimum spacing.
  */
-class MultiSeparationConstraint : public CompoundConstraint 
+class COLA_EXPORT MultiSeparationConstraint : public CompoundConstraint
 {
     public:
         /**
@@ -606,7 +607,7 @@ class MultiSeparationConstraint : public CompoundConstraint
  * If no separation distance is set, then it is detemined from the distance 
  * between the two outer alignments, divided by the number of alignments - 1.
  */
-class DistributionConstraint : public CompoundConstraint {
+class COLA_EXPORT DistributionConstraint : public CompoundConstraint {
     public:
         /**
          * @brief Constructs a new empty DistributionConstraint with a 
@@ -674,7 +675,7 @@ class DistributionConstraint : public CompoundConstraint {
  * a fixed position, in which case a variable weight will be given to try to
  * keep the whole group at the current position.
  */
-class FixedRelativeConstraint : public CompoundConstraint {
+class COLA_EXPORT FixedRelativeConstraint : public CompoundConstraint {
     public:
         /**
          * @brief Constructs a new FixedRelativeConstraint between a set of 
@@ -725,7 +726,7 @@ class FixedRelativeConstraint : public CompoundConstraint {
  * edges have a high weight but will "balloon out" if other constraints force
  * nodes to stick out past the ideal edge positions.
  */
-class PageBoundaryConstraints : public CompoundConstraint {
+class COLA_EXPORT PageBoundaryConstraints : public CompoundConstraint {
     public:
         /**
          * @brief  Constructs a new PageBoundaryConstraints object with given

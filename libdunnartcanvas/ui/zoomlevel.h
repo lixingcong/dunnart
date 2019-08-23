@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow  <mjwybrow@users.sourceforge.net>
@@ -25,13 +25,14 @@
 #define ZOOMLEVEL_H_
 
 #include "ui_ZoomLevel.h"
+#include "libdunnartcanvas/dllexport.h"
 
 namespace dunnart {
 
 
 class CanvasView;
 
-class ZoomLevel : public QDockWidget, private Ui::ZoomLevel
+class DUNNARTCANVAS_EXPORT ZoomLevel : public QDockWidget, private Ui::ZoomLevel
 {
     Q_OBJECT
 

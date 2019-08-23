@@ -31,6 +31,7 @@ HEADERS += cola.h \
     cluster.h \
     commondefs.h \
     compound_constraints.h \
+    dllexport.h \
     gradient_projection.h \
     sparse_matrix.h \
     straightener.h \
@@ -43,3 +44,5 @@ HEADERS += cola.h \
     shapepair.h \
     pseudorandom.h \
     config.h
+
+DEFINES+=LIBCOLA_EXPORTS

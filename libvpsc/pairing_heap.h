@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libvpsc - A solver for the problem of Variable Placement with 
@@ -33,7 +33,6 @@
 #define VPSC_PAIRING_HEAP_H
 
 #include <cstdlib>
-#include <fstream>
 #include <vector>
 #include <list>
 

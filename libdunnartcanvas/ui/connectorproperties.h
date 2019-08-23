@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow  <mjwybrow@users.sourceforge.net>
@@ -26,12 +26,13 @@
 
 #include "ui_connectorproperties.h"
 #include <QDockWidget>
+#include "libdunnartcanvas/dllexport.h"
 
 namespace dunnart {
 
 class Canvas;
 
-class ConnectorPropertiesDialog : public QDockWidget, private Ui::ConnectorProperties
+class DUNNARTCANVAS_EXPORT ConnectorPropertiesDialog : public QDockWidget, private Ui::ConnectorProperties
 {
     Q_OBJECT
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 20108  Monash University
@@ -26,6 +26,7 @@
 
 #include <QMap>
 #include <QDockWidget>
+#include "libdunnartcanvas/dllexport.h"
 
 class QtTreePropertyBrowser;
 class QtVariantPropertyManager;
@@ -37,7 +38,7 @@ namespace dunnart {
 
 class Canvas;
 
-class PropertiesEditorDialog : public QDockWidget
+class DUNNARTCANVAS_EXPORT PropertiesEditorDialog : public QDockWidget
 {
     Q_OBJECT
 

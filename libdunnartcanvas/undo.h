@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -30,6 +30,7 @@
 #include <QUndoCommand>
 
 #include "libdunnartcanvas/canvas.h"
+#include "libdunnartcanvas/dllexport.h"
 
 namespace dunnart {
 
@@ -43,7 +44,7 @@ class CanvasItem;
 // to the undo stack and the SIGNALS are sent at the wrong time.  Hence,
 // we manually handle addition and merging in addCommand.
 //
-class UndoMacro : public QUndoCommand
+class DUNNARTCANVAS_EXPORT UndoMacro : public QUndoCommand
 {
     public:
         UndoMacro(Canvas *canvas);
@@ -57,7 +58,7 @@ class UndoMacro : public QUndoCommand
 };
 
 
-class CmdCanvasSceneAddItem : public QUndoCommand
+class DUNNARTCANVAS_EXPORT CmdCanvasSceneAddItem : public QUndoCommand
 {
     public:
         CmdCanvasSceneAddItem(Canvas *canvas, CanvasItem *item);
@@ -71,7 +72,7 @@ class CmdCanvasSceneAddItem : public QUndoCommand
 };
 
 
-class CmdCanvasSceneRemoveItem : public QUndoCommand
+class DUNNARTCANVAS_EXPORT CmdCanvasSceneRemoveItem : public QUndoCommand
 {
     public:
         CmdCanvasSceneRemoveItem(Canvas *canvas, CanvasItem *item);

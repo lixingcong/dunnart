@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow  <mjwybrow@users.sourceforge.net>
@@ -25,6 +25,7 @@
 #define LAYOUTPROPERTIES_H_
 
 #include "ui_LayoutProperties.h"
+#include "libdunnartcanvas/dllexport.h"
 
 class QSignalMapper;
 
@@ -32,7 +33,7 @@ namespace dunnart {
 
 class Canvas;
 
-class LayoutPropertiesDialog : public QDockWidget, private Ui::LayoutProperties
+class DUNNARTCANVAS_EXPORT LayoutPropertiesDialog : public QDockWidget, private Ui::LayoutProperties
 {
     Q_OBJECT
 

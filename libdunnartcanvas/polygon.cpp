@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -63,9 +63,10 @@ void PolygonShape::initWithXMLProperties(Canvas *canvas,
         int stringIndex = 0;
 
         // Read the number of points.
-        int totalPoints = strings.at(stringIndex++).toInt();
+        const int totalPoints = strings.at(stringIndex++).toInt();
         
-        int geometry[2][totalPoints];
+        int* geometry0=new int[totalPoints];
+        int* geometry1=new int[totalPoints];
 
         int xp = essentialProp<int>(node, x_xPos, ns);
         int yp = essentialProp<int>(node, x_yPos, ns);
@@ -73,10 +74,13 @@ void PolygonShape::initWithXMLProperties(Canvas *canvas,
         // Read a space separated list of coordinates. 
         for (int ptNum = 0; ptNum < totalPoints; ++ptNum)
         {
-            geometry[0][ptNum] = strings.at(stringIndex++).toInt() + xp;
-            geometry[1][ptNum] = strings.at(stringIndex++).toInt() + yp;
+            *(geometry0+ptNum) = strings.at(stringIndex++).toInt() + xp;
+            *(geometry1+ptNum) = strings.at(stringIndex++).toInt() + yp;
         }
-        setBoundaryInternal(geometry[0], geometry[1], totalPoints);
+        setBoundaryInternal(geometry0, geometry1, totalPoints);
+
+		delete[] geometry0;
+		delete[] geometry1;
     }
     else
     {

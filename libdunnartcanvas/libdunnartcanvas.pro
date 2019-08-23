@@ -24,6 +24,8 @@ graphviz {
 
 win32 {
 LIBS += -Wl,--export-all-symbols -Wl,--no-whole-archive
+DEFINES+=OGDF_DLL
+DEFINES+=LIBDUNNARTCANVAS_EXPORTS
 }
 LIBS += -L$$DESTDIR -lavoid -lvpsc -ltopology -lcola -logdf
 
@@ -94,6 +96,7 @@ SOURCES += \
 
 HEADERS += \
 	FMMLayout.h \
+	dllexport.h \
 	oldcanvas.h \
 	canvasitem.h \
 	cluster.h \

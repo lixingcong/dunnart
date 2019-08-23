@@ -24,6 +24,7 @@ SOURCES += \
 	orthogonal_topology.cpp
 
 HEADERS += \
+	dllexport.h \
 	topology_constraints.h \
 	topology_graph.h \
 	topology_log.h \
@@ -31,3 +32,5 @@ HEADERS += \
 	cola_topology_addon.h \
 	orthogonal_topology.h
 
+
+DEFINES+=LIBTOPOLOGY_EXPORTS

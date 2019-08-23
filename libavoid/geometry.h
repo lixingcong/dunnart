@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -38,12 +38,13 @@
 
 #include "libavoid/geomtypes.h"
 #include "libavoid/assertions.h"
+#include "libavoid/dllexport.h"
 
 namespace Avoid {
 
 
-extern double euclideanDist(const Point& a, const Point& b);
-extern double manhattanDist(const Point& a, const Point& b);
+AVOID_EXPORT double euclideanDist(const Point& a, const Point& b);
+AVOID_EXPORT double manhattanDist(const Point& a, const Point& b);
 extern double totalLength(const Polygon& poly);
 extern double angle(const Point& a, const Point& b, const Point& c);
 extern bool segmentIntersect(const Point& a, const Point& b,

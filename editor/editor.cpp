@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow  <mjwybrow@users.sourceforge.net>
@@ -32,7 +32,9 @@
 #include <cctype>
 #include <cstring>
 
+#if HAVE_UNISTD_H
 #include <unistd.h>
+#endif
 
 #include "application.h"
 

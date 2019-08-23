@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -43,6 +43,7 @@
 #include <set>
 #include <iostream>
 
+#include "libdunnartcanvas/dllexport.h"
 
 class QGraphicsSceneMouseEvent;
 
@@ -59,9 +60,9 @@ static const double BOUNDINGRECTPADDING = 3.5;
 // SVG:
 extern const char *x_id;
 // Namespace:
-extern const QString x_dunnartNs;
+DUNNARTCANVAS_EXPORT extern const QString x_dunnartNs;
 // Dunnarts:
-extern const char *x_type;
+DUNNARTCANVAS_EXPORT extern const char *x_type;
 extern const char *x_connector;
 extern const char *x_xPos;
 extern const char *x_yPos;
@@ -85,7 +86,9 @@ extern const char *x_dstID;
 extern const char *x_dstFlags;
 extern const char *x_dstPinID;
 extern const char *x_directed;
-extern const char *x_reversed;
+
+DUNNARTCANVAS_EXPORT extern const char *x_reversed;
+
 extern const char *x_rectangular;
 extern const char *x_obeysDirEdgeConstraints;
 extern const char *x_orthogonalConstraint;
@@ -114,7 +117,7 @@ extern const char *x_isMultiway;
 extern const char *x_sepDistance;
 extern const char *x_fontSize;
 extern const char *x_geometry;
-extern const char *x_dunnartURI;
+DUNNARTCANVAS_EXPORT extern const char *x_dunnartURI;
 extern const char *x_lockedPosition;
 extern const char *x_libavoidPath;
 
@@ -144,7 +147,7 @@ class CanvasItem;
 typedef QSet<CanvasItem *> CanvasItemSet;
 
 
-class CanvasItem: public QGraphicsSvgItem
+class DUNNARTCANVAS_EXPORT CanvasItem: public QGraphicsSvgItem
 {
     Q_OBJECT
     Q_PROPERTY (QString type READ itemType)
@@ -295,9 +298,9 @@ inline QString qualify(const QString& prefix, const QString& name)
     return (prefix.isEmpty()) ? name : prefix + ":" + name;
 }
 
-extern QString nodeAttribute(const QDomElement& node, const QString& ns,
+DUNNARTCANVAS_EXPORT QString nodeAttribute(const QDomElement& node, const QString& ns,
         const QString& prop);
-extern bool nodeHasAttribute(const QDomElement& node, const QString& ns,
+DUNNARTCANVAS_EXPORT bool nodeHasAttribute(const QDomElement& node, const QString& ns,
         const QString& prop);
 
 template <typename T>

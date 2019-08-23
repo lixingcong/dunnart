@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -26,7 +26,7 @@
 #include <cstdio>
 
 #include "libvpsc/rectangle.h"
-
+#include "libcola/dllexport.h"
 
 namespace cola {
 
@@ -34,7 +34,7 @@ namespace cola {
  * @brief A box consisting of four edge values for representing padding or 
  *        margins for rectangles.
  */
-class Box
+class COLA_EXPORT Box
 {
     public:
         /**

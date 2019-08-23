@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libtopology - Classes used in generating and managing topology constraints.
@@ -19,6 +19,12 @@
 */
 
 #include <utility>
+
+#ifdef _MSC_VER
+#define NOMINMAX
+#define _USE_MATH_DEFINES
+#include <cmath>
+#endif
 
 #include "libvpsc/rectangle.h"
 #include "libvpsc/constraint.h"

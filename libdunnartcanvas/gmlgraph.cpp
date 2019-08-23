@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2007-2008  Monash University
@@ -201,7 +201,7 @@ Graph::Graph(Canvas *canvas, string gmlFile, Page page, COff canvasOffset)
     forall_edges(e,G) {
         es.push_back(make_pair(e->source()->index(),e->target()->index()));
     }
-    shortest_paths::johnsons(n,shortestPathsMatrix,es);
+    shortest_paths::johnsons(n,shortestPathsMatrix,es,std::valarray<int>());
     canvas->setIdealConnectorLength(70);
 }
 Draw::Draw(ogdf::Graph& G, ogdf::GraphAttributes& GA, QPixmap *pixmap,

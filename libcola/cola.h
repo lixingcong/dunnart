@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -30,6 +30,8 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+
+#include "libcola/dllexport.h"
 
 #include "libcola/gradient_projection.h"
 #include "libcola/cluster.h"
@@ -507,7 +509,7 @@ class ConstrainedFDLayout;
  * @brief  Interface for writing COLA addons to handle topology preserving 
  *         layout.
  */
-class TopologyAddonInterface 
+class COLA_EXPORT TopologyAddonInterface
 {
     public:
         TopologyAddonInterface()
@@ -598,7 +600,7 @@ class TopologyAddonInterface
  * Fruchterman-Reingold---but using a more principled goal function and
  * optimisation techniques.
  */
-class ConstrainedFDLayout {
+class COLA_EXPORT ConstrainedFDLayout {
 public:
     /**
      * @brief Constructs a constrained force-directed layout instance.
@@ -858,12 +860,12 @@ void dijkstra(const unsigned s, const unsigned n, double* d,
 void removeClusterOverlapFast(RootCluster& clusterHierarchy, vpsc::Rectangles& rs, Locks& locks);
 #endif
 
-void setupVarsAndConstraints(unsigned n, const CompoundConstraints& ccs,
+COLA_EXPORT void setupVarsAndConstraints(unsigned n, const CompoundConstraints& ccs,
         const vpsc::Dim dim, vpsc::Rectangles& boundingBoxes,
         RootCluster *clusterHierarchy,
         vpsc::Variables& vs, vpsc::Constraints& cs, 
         std::valarray<double> &coords);
-void setVariableDesiredPositions(vpsc::Variables& vs, vpsc::Constraints& cs,
+COLA_EXPORT void setVariableDesiredPositions(vpsc::Variables& vs, vpsc::Constraints& cs,
         const DesiredPositionsInDim& des, std::valarray<double>& coords);
 
 }

@@ -1,4 +1,4 @@
-// vim: filetype=cpp ts=4 sw=4 et tw=0 wm=0 cindent
+﻿// vim: filetype=cpp ts=4 sw=4 et tw=0 wm=0 cindent
 /*
  * Dunnart - Constraint-based Diagram Editor
  *
@@ -29,12 +29,13 @@
 #define UNDOHISTORYDIALOG_H
 
 #include <QDockWidget>
+#include "libdunnartcanvas/dllexport.h"
 
 class QUndoGroup;
 
 namespace dunnart {
 
-class UndoHistoryDialog : public QDockWidget
+class DUNNARTCANVAS_EXPORT UndoHistoryDialog : public QDockWidget
 {
     Q_OBJECT
 

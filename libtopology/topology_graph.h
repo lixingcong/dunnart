@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libtopology - Classes used in generating and managing topology constraints.
@@ -31,7 +31,10 @@
 #include "libvpsc/assertions.h"
 #include "libvpsc/rectangle.h"
 
+#include "libtopology/dllexport.h"
 #include "libtopology/util.h"
+
+#include <functional>
 
 namespace vpsc {
     class Variable;
@@ -55,7 +58,7 @@ namespace topology {
      *       extract them from an existing ColaTopologyAddon and construct
      *       a new ColaTopologyAddon with that same topology information.
      */
-    class Node {
+    class TOPOLOGY_EXPORT Node {
     public:
         // the index of the associated node / variable / rectangle
         const unsigned id;
@@ -90,7 +93,7 @@ namespace topology {
      * either the middle of a Node (the start/end of the edge) or to a corner
      * of a Node (a bend point around an edge).
      */
-    class EdgePoint {
+    class TOPOLOGY_EXPORT EdgePoint {
     public:
         // the node / variable / rectangle associated with this EdgePoint
         Node* node;
@@ -393,7 +396,7 @@ namespace topology {
      *       extract them from an existing ColaTopologyAddon and construct
      *       a new ColaTopologyAddon with that same topology information.
      */
-    class Edge {
+    class TOPOLOGY_EXPORT Edge {
     public:
         /// id specified by user.  Can be used to match to external edge.
         unsigned id;
@@ -546,7 +549,7 @@ inline double crossProduct(
 }
 
 #ifndef NDEBUG
-    bool assertConvexBends(const Edges&);
+    TOPOLOGY_EXPORT bool assertConvexBends(const Edges&);
     /*
      * Asserts that there are no intersections between any of the segments
      * in edges and rectangles in nodes
@@ -554,7 +557,7 @@ inline double crossProduct(
      * @param edges containing segments
      * @return true if assertions succeed
      */
-    bool assertNoSegmentRectIntersection(const Nodes&, const Edges&);
+    TOPOLOGY_EXPORT bool assertNoSegmentRectIntersection(const Nodes&, const Edges&);
     bool assertNoZeroLengthEdgeSegments(const Edges& es);
 #endif
 } // namespace topology

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -22,10 +22,11 @@
 #define CONVEX_HULL_H
 #include <vector>
 #include <valarray>
+#include "libcola/dllexport.h"
 
 namespace hull {
-void convex(const unsigned n, const double* X, const double* Y, std::vector<unsigned> & hull);
-void convex(const std::valarray<double> & X, const std::valarray<double> & Y, std::vector<unsigned> & hull);
+COLA_EXPORT void convex(const unsigned n, const double* X, const double* Y, std::vector<unsigned> & hull);
+COLA_EXPORT void convex(const std::valarray<double> & X, const std::valarray<double> & Y, std::vector<unsigned> & hull);
 }
 
 #endif // CONVEX_HULL_H

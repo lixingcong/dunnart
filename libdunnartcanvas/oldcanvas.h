@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -31,6 +31,7 @@
 #include <QString>
 #include <QXmlNamespaceSupport>
 
+#include "libdunnartcanvas/dllexport.h"
 
 namespace dunnart {
 
@@ -44,7 +45,7 @@ class CanvasItem;
 class Handle;
 
 
-extern QXmlNamespaceSupport namespaces;
+DUNNARTCANVAS_EXPORT extern QXmlNamespaceSupport namespaces;
 
 
 extern void toggle_partial_feedback(QWidget **c);

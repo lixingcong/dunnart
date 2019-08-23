@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libvpsc - A solver for the problem of Variable Placement with 
@@ -31,6 +31,7 @@
 #include <vector>
 #include <sstream>
 
+#include "libvpsc/dllexport.h"
 #include "libvpsc/variable.h"
 
 namespace vpsc {
@@ -41,7 +42,7 @@ typedef std::vector<Variable *> Variables;
 //! @brief A constraint determines a minimum or exact spacing required between
 //!        two Variable objects.
 //!
-class Constraint
+class VPSC_EXPORT Constraint
 {
 	friend std::ostream& operator <<(std::ostream &os,const Constraint &c);
 public:
@@ -131,7 +132,7 @@ typedef std::vector<Constraint*> Constraints;
  * them as unsatisfiable.  This function looks for cycles of equality 
  * constraints and removes the redundant ones.
  */
-extern Constraints constraintsRemovingRedundantEqualities(
+VPSC_EXPORT Constraints constraintsRemovingRedundantEqualities(
         const Variables& vars, const Constraints& constraints);
 
 }

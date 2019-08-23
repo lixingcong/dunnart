@@ -1,4 +1,4 @@
-// vim: filetype=cpp ts=4 sw=4 et tw=0 wm=0 cindent
+﻿// vim: filetype=cpp ts=4 sw=4 et tw=0 wm=0 cindent
 /*
  * Dunnart - Constraint-based Diagram Editor
  *
@@ -31,6 +31,7 @@
 #include <QDockWidget>
 #include <QObjectList>
 #include "ui_shapepickerdialog.h"
+#include "libdunnartcanvas/dllexport.h"
 
 class QGridLayout;
 class QMouseEvent;
@@ -39,7 +40,7 @@ namespace dunnart {
 
 class Canvas;
 
-class ShapePickerDialog : public QDockWidget, private Ui::ShapePickerDialog
+class DUNNARTCANVAS_EXPORT ShapePickerDialog : public QDockWidget, private Ui::ShapePickerDialog
 {
     Q_OBJECT
 

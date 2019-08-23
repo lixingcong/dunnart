@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -28,6 +28,7 @@
 #include "libvpsc/rectangle.h"
 #include "libvpsc/variable.h"
 
+#include "libcola/dllexport.h"
 #include "libcola/compound_constraints.h"
 #include "libcola/commondefs.h"
 #include "libcola/box.h"
@@ -47,7 +48,7 @@ typedef std::vector<Clusters> ClustersList;
  * At the top level you should be using RootCluster, and then below that 
  * either RectangualarCLuster or ConvexCluster.
  */
-class Cluster
+class COLA_EXPORT Cluster
 {
     public:
         Cluster();
@@ -169,7 +170,7 @@ class Cluster
  * two clusters as children of each other.  The library does not check for 
  * this and strange things may occur.
  */
-class RootCluster : public Cluster 
+class COLA_EXPORT RootCluster : public Cluster
 {
     public:
         RootCluster();
@@ -215,7 +216,7 @@ class RootCluster : public Cluster
  *
  * The chosen constructor decides the type and behaviour of the cluster.
  */
-class RectangularCluster : public Cluster
+class COLA_EXPORT RectangularCluster : public Cluster
 {
     public:
         /**
@@ -355,7 +356,7 @@ class RectangularCluster : public Cluster
  * @brief  Defines a cluster that will be treated as a convex boundary around
  *         the child nodes and clusters.
  */
-class ConvexCluster : public Cluster
+class COLA_EXPORT ConvexCluster : public Cluster
 {
     public:
         void computeBoundary(const vpsc::Rectangles& rs);

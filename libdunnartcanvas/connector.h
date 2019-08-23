@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -90,7 +90,7 @@ class CPoint
 enum endPt { SRCPT, DSTPT };
 
 
-class Connector : public CanvasItem
+class DUNNARTCANVAS_EXPORT Connector : public CanvasItem
 {
     Q_OBJECT
     Q_PROPERTY (RoutingType routingType READ routingType WRITE setRoutingType)

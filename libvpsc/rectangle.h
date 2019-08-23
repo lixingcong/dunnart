@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libvpsc - A solver for the problem of Variable Placement with 
@@ -32,6 +32,7 @@
 #include <set>
 #include <cassert>
 #include <cmath>
+#include "dllexport.h"
 
 #include "libvpsc/assertions.h"
 
@@ -56,7 +57,7 @@ inline Dim conjugate(Dim d) {
 }
 /* records the positions and sides through which a particular line intersects with a rectangle
  */
-struct RectangleIntersections {
+struct VPSC_EXPORT RectangleIntersections {
     bool intersects, top, bottom, left, right;
     double topX, topY, bottomX, bottomY, leftX, leftY, rightX, rightY;
     RectangleIntersections()
@@ -75,7 +76,7 @@ struct RectangleIntersections {
  * @brief  A rectangle represents a fixed-size shape in the diagram that may
  *         be moved to prevent overlaps and satisfy constraints.
  */
-class Rectangle {   
+class VPSC_EXPORT Rectangle {
 public:
     /**
      * @brief Constructs a rectangle by specifying the positions of all 
@@ -233,7 +234,8 @@ public:
      * in the other axis for example, to avoid numerical precision problems in
      * the axis-by-axis overlap removal process.
      */
-    static double xBorder,yBorder;
+    static double xBorder;
+    static double yBorder;
     static void setXBorder(double x) {xBorder=x;}
     static void setYBorder(double y) {yBorder=y;}
     
@@ -245,16 +247,16 @@ private:
 //! @brief A vector of pointers to Rectangle objects.
 typedef std::vector<Rectangle*> Rectangles;
 
-std::ostream& operator<<(std::ostream& os, vpsc::Rectangle const &r);
+VPSC_EXPORT std::ostream& operator<<(std::ostream& os, vpsc::Rectangle const &r);
 
 class Variable;
 typedef std::vector<Variable *> Variables;
 class Constraint;
 typedef std::vector<Constraint *> Constraints;
 
-void generateXConstraints(const Rectangles& rs, const Variables& vars,
+VPSC_EXPORT void generateXConstraints(const Rectangles& rs, const Variables& vars,
         Constraints& cs, const bool useNeighbourLists);
-void generateYConstraints(const Rectangles& rs, const Variables& vars,
+VPSC_EXPORT void generateYConstraints(const Rectangles& rs, const Variables& vars,
         Constraints& cs);
 
 /**
@@ -265,7 +267,7 @@ void generateYConstraints(const Rectangles& rs, const Variables& vars,
  *
  * @param[in,out] rs  The rectangles which will be moved to remove overlap
  */
-void removeoverlaps(Rectangles& rs);
+VPSC_EXPORT void removeoverlaps(Rectangles& rs);
 
 /** 
  * @brief Uses VPSC to remove overlaps between rectangles, excluding some 
@@ -286,7 +288,7 @@ void removeoverlaps(Rectangles& rs);
  * @param[in] fixed     A set of indices to rectangles which should not be moved.
  * @param[in] thirdPass Optionally run the third horizontal pass described above.
  */
-void removeoverlaps(Rectangles& rs, const std::set<unsigned>& fixed, 
+VPSC_EXPORT void removeoverlaps(Rectangles& rs, const std::set<unsigned>& fixed,
         bool thirdPass = true);
 
 // Useful for assertions:

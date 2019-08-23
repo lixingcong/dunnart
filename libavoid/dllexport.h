@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -28,7 +28,7 @@
 
 #if defined(_MSC_VER) && !defined(LIBAVOID_NO_DLL)
     #ifdef LIBAVOID_EXPORTS
-        #define AVOID_EXPORT __declspec(dllexport)
+        #define AVOID_EXPORT __declspec(dllexport) // 用msvc2013编译器要使这行生效，即定义DEFINES+=LIBAVOID_EXPORTS
     #else
         #define AVOID_EXPORT __declspec(dllimport)
     #endif

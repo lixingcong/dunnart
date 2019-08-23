@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -30,7 +30,7 @@
 #include <list>
 
 #include "libavoid/geomtypes.h"
-
+#include "libavoid/dllexport.h"
 
 namespace Avoid {
 
@@ -41,7 +41,7 @@ class Obstacle;
 class VertInf;
 
 // ShiftSegment interface.
-class ShiftSegment
+class AVOID_EXPORT ShiftSegment
 { 
     public:
         ShiftSegment(const size_t dim)
@@ -75,7 +75,7 @@ struct CmpNodePos
 
 typedef std::set<Node*,CmpNodePos> NodeSet;
 
-class Node 
+class AVOID_EXPORT Node
 {
     public:
 
@@ -114,7 +114,7 @@ typedef enum {
 } EventType;
 
 
-struct Event
+struct AVOID_EXPORT Event
 {
     Event(EventType t, Node *v, double p);
     
@@ -124,7 +124,7 @@ struct Event
 };
 
 
-extern int compare_events(const void *a, const void *b);
+AVOID_EXPORT int compare_events(const void *a, const void *b);
 extern void buildConnectorRouteCheckpointCache(Router *router);
 extern void clearConnectorRouteCheckpointCache(Router *router);
 extern void buildOrthogonalChannelInfo(Router *router, 

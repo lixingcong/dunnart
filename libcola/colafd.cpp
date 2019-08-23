@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -24,8 +24,12 @@
 // cmath needs ::strcpy_s under MinGW so include cstring.
 #include <cstring>
 
+#ifdef _MSC_VER
+#include <algorithm>
+#define NOMINMAX
+#endif
+
 #include <vector>
-#include <cmath>
 #include <limits>
 
 #include "libvpsc/solve_VPSC.h"

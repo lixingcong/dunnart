@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2012  Monash University
@@ -32,6 +32,8 @@
 #include <QApplication>
 #include <QFileInfo>
 
+#include "libdunnartcanvas/dllexport.h"
+
 class QEvent;
 class QMainWindow;
 
@@ -51,7 +53,7 @@ class CanvasView;
 //!
 //! Dunnart's own subclass of this is dunnart::Application.
 //!
-class CanvasApplication : public QApplication
+class DUNNARTCANVAS_EXPORT CanvasApplication : public QApplication
 {
     Q_OBJECT
 

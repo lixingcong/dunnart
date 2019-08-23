@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2008-2010  Monash University
@@ -25,6 +25,7 @@
 
 #include "ui_createtemplate.h"
 #include <QDockWidget>
+#include "libdunnartcanvas/dllexport.h"
 
 class QSignalMapper;
 
@@ -32,7 +33,7 @@ namespace dunnart {
 
 class Canvas;
 
-class CreateTemplateDialog : public QDockWidget,
+class DUNNARTCANVAS_EXPORT CreateTemplateDialog : public QDockWidget,
     private Ui::CreateTemplateDialog
 {
     Q_OBJECT

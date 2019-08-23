@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libvpsc - A solver for the problem of Variable Placement with 
@@ -31,6 +31,7 @@
 #define VPSC_SOLVE_VPSC_H
 
 #include <vector>
+#include "dllexport.h"
 
 /**
  * @namespace vpsc
@@ -57,7 +58,7 @@ typedef std::vector<Constraint*> Constraints;
  *
  * @sa IncSolver
  */
-class Solver {
+class VPSC_EXPORT Solver {
 public:
 	//! @brief  Results in an approximate solution subject to the constraints.
     //! @return true if any constraints are active, or false if an unconstrained 
@@ -102,7 +103,7 @@ private:
  *
  * @sa Solver
  */
-class IncSolver : public Solver {
+class VPSC_EXPORT IncSolver : public Solver {
 public:
 	IncSolver(Variables const &vs, Constraints const &cs);
 	//! @brief  Results in an approximate solution subject to the constraints.

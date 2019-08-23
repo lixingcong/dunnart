@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -28,6 +28,7 @@
 
 #include "libdunnartcanvas/canvasitem.h"
 #include "libdunnartcanvas/guideline.h"
+#include "libdunnartcanvas/dllexport.h"
 
 namespace Avoid {
 
@@ -87,7 +88,7 @@ typedef std::multiset<Connector *> ConnMultiset;
   * by selecting the shape and hitting the '+' key to increase the detail
   * level or the '-' key to decrease it.
   */
-class ShapeObj: public CanvasItem
+class DUNNARTCANVAS_EXPORT ShapeObj: public CanvasItem
 {
     Q_OBJECT
     Q_PROPERTY (QPointF position READ centrePos WRITE cmd_setCentrePos)

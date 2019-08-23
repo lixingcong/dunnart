@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2010  Monash University
@@ -30,6 +30,8 @@
 #include <QList>
 #include <QMap>
 
+#include "libdunnartcanvas/dllexport.h"
+
 class QString;
 class QDomElement;
 
@@ -41,7 +43,7 @@ class ShapePluginInterface;
 
 typedef QMap<QString, ShapePluginInterface *> ShapeBuilders;
 
-class PluginShapeFactory
+class DUNNARTCANVAS_EXPORT PluginShapeFactory
 {
 public:
     PluginShapeFactory();
@@ -55,7 +57,7 @@ private:
     QList<ShapeBuilders> m_shape_builders;
 };
 
-extern PluginShapeFactory *sharedPluginShapeFactory(void);
+DUNNARTCANVAS_EXPORT PluginShapeFactory *sharedPluginShapeFactory(void);
 
 }
 #endif // PLUGINSHAPEFACTORY_H

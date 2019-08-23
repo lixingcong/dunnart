@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2010  Monash University
@@ -26,13 +26,14 @@
 #include "libdunnartcanvas/pluginshapefactory.h"
 #include "libdunnartcanvas/shapeplugininterface.h"
 #include "libdunnartcanvas/shape.h"
+#include "libdunnartcanvas/dllexport.h"
 
 namespace dunnart {
 
 // Shared singleton:
 static PluginShapeFactory *shared_plugin_shape_factory = NULL;
 
-PluginShapeFactory *sharedPluginShapeFactory(void)
+DUNNARTCANVAS_EXPORT PluginShapeFactory *sharedPluginShapeFactory(void)
 {
     if (shared_plugin_shape_factory == NULL)
     {

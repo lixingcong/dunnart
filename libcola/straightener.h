@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libcola - A library providing force-directed network layout using the 
@@ -28,6 +28,10 @@
 
 #include "libvpsc/rectangle.h"
 #include "libcola/commondefs.h"
+
+#ifdef _MSC_VER
+#include <algorithm>
+#endif
 
 namespace cola {
     class Cluster;

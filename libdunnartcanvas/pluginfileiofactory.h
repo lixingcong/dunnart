@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2010  Monash University
@@ -29,6 +29,7 @@
 #include <QStringList>
 #include <QList>
 #include <QMap>
+#include "libdunnartcanvas/dllexport.h"
 
 class QString;
 class QFileInfo;
@@ -40,7 +41,7 @@ class FileIOPluginInterface;
 
 typedef QMap<QString, FileIOPluginInterface *> FileIOHandlers;
 
-class PluginFileIOFactory
+class DUNNARTCANVAS_EXPORT PluginFileIOFactory
 {
 public:
     PluginFileIOFactory();
@@ -58,7 +59,7 @@ private:
     FileIOHandlers m_file_saving_handlers;
 };
 
-extern PluginFileIOFactory *sharedPluginFileIOFactory(void);
+DUNNARTCANVAS_EXPORT PluginFileIOFactory *sharedPluginFileIOFactory(void);
 
 }
 #endif // PLUGINFILEIOFACTORY_H

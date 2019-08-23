@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -473,7 +473,7 @@ typedef std::pair<Point *, ConnRef *> PtConnPtrPair;
 typedef std::vector< PtConnPtrPair > PointRepVector;
 typedef std::list<std::pair<size_t, size_t> > NodeIndexPairLinkList;
 
-class PtOrder
+class AVOID_EXPORT PtOrder
 {
     public:
         PtOrder();
@@ -510,7 +510,7 @@ typedef std::pair<int, unsigned int> CrossingsInfoPair;
 typedef std::vector<Avoid::Point> PointList;
 typedef std::vector<PointList> SharedPathList;
 
-class ConnectorCrossings
+class AVOID_EXPORT ConnectorCrossings
 {
     public:
         ConnectorCrossings(Avoid::Polygon& poly, bool polyIsConn, 
@@ -536,7 +536,7 @@ class ConnectorCrossings
         double secondSharedPathAtEndLength;
 };
 
-extern void splitBranchingSegments(Avoid::Polygon& poly, bool polyIsConn,
+AVOID_EXPORT void splitBranchingSegments(Avoid::Polygon& poly, bool polyIsConn,
         Avoid::Polygon& conn, const double tolerance = 0);
 extern bool validateBendPoint(VertInf *aInf, VertInf *bInf, VertInf *cInf);
 

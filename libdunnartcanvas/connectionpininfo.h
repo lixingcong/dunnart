@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2011  Monash University
@@ -33,9 +33,11 @@
 #include "libavoid/connectionpin.h"
 #include "libavoid/connend.h"
 
+#include "libdunnartcanvas/dllexport.h"
+
 namespace dunnart {
 
-class ConnectionPinInfo
+class DUNNARTCANVAS_EXPORT ConnectionPinInfo
 {
 public:
     ConnectionPinInfo(const unsigned int classId,

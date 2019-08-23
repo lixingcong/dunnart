@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -32,6 +32,8 @@
 #include <QGraphicsView>
 #include <QList>
 
+#include "libdunnartcanvas/dllexport.h"
+
 class QMenu;
 
 namespace dunnart {
@@ -40,7 +42,7 @@ namespace dunnart {
 class CanvasItem;
 class Canvas;
 
-class CanvasView : public QGraphicsView
+class DUNNARTCANVAS_EXPORT CanvasView : public QGraphicsView
 {
     Q_OBJECT;
 

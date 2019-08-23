@@ -10,11 +10,15 @@ DEPENDPATH += .
 include(../common_options.qmake)
 CONFIG -= qt
 
+!win32{
 QMAKE_CXXFLAGS_DEBUG += -Wall -W -Wno-unused-parameter
 QMAKE_CXXFLAGS_RELEASE += -Wall -W -Wno-unused-parameter
+}
 
 win32 {
 LIBS += -Wl,--export-all-symbols -Wl,--no-whole-archive -lpsapi
+
+DEFINES+=OGDF_DLL OGDF_INSTALL
 }
 
 # Input

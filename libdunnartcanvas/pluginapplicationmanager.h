@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2012  Monash University
@@ -27,6 +27,7 @@
 #define PLUGINAPPLICATIONFACTORY_H
 
 #include <QList>
+#include "libdunnartcanvas/dllexport.h"
 
 namespace dunnart {
 
@@ -35,7 +36,7 @@ class ApplicationPluginInterface;
 
 typedef QList<ApplicationPluginInterface *> ApplicationPlugins;
 
-class PluginApplicationManager
+class DUNNARTCANVAS_EXPORT PluginApplicationManager
 {
 public:
     PluginApplicationManager();
@@ -49,7 +50,7 @@ private:
     CanvasApplication *m_canvas_application;
 };
 
-extern PluginApplicationManager *sharedPluginApplicationManager(void);
+DUNNARTCANVAS_EXPORT PluginApplicationManager *sharedPluginApplicationManager(void);
 
 }
 #endif // PLUGINAPPLICATIONFACTORY_H

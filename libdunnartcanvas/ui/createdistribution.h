@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow  <mjwybrow@users.sourceforge.net>
@@ -26,6 +26,7 @@
 
 #include "ui_createdistribution.h"
 #include <QDockWidget>
+#include "libdunnartcanvas/dllexport.h"
 
 class QSignalMapper;
 
@@ -33,7 +34,7 @@ namespace dunnart {
 
 class Canvas;
 
-class CreateDistributionDialog : public QDockWidget, 
+class DUNNARTCANVAS_EXPORT CreateDistributionDialog : public QDockWidget,
 	private Ui::CreateDistributionDialog
 {
     Q_OBJECT

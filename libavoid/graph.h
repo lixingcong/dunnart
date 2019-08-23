@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -31,6 +31,7 @@
 #include <list>
 #include <utility>
 #include "libavoid/vertices.h"
+#include "libavoid/dllexport.h"
 
 namespace Avoid {
 
@@ -43,7 +44,7 @@ typedef std::list<int> ShapeList;
 typedef std::list<bool *> FlagList;
 
 
-class EdgeInf
+class AVOID_EXPORT EdgeInf
 {
     public:
         EdgeInf(VertInf *v1, VertInf *v2, const bool orthogonal = false);
@@ -106,7 +107,7 @@ class EdgeInf
 };
 
 
-class EdgeList
+class AVOID_EXPORT EdgeList
 {
     public:
         friend class EdgeInf;

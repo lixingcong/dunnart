@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -331,7 +331,7 @@ struct delete_object
     void operator()(T *ptr){ delete ptr;}
 };
 
-extern Constraints constraintsRemovingRedundantEqualities(
+Constraints constraintsRemovingRedundantEqualities(
         Variables const &vars, Constraints const &constraints);
 
 }

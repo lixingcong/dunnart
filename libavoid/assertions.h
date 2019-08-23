@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -39,9 +39,13 @@
     // Prevent inclusion of min and max macros.
     #define NOMINMAX
 
+  #ifdef USE_ATLTRACE
     #include <afx.h>
     #define COLA_ASSERT(expr) ASSERT(expr)
-
+  #else
+    #include <cassert>
+    #define COLA_ASSERT(expr)  assert(expr)
+  #endif
   #elif defined(USE_ASSERT_EXCEPTIONS)
 
     #include "libvpsc/assertions.h"

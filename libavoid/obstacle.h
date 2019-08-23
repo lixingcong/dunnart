@@ -1,4 +1,4 @@
-/*
+﻿/*
  * vim: ts=4 sw=4 et tw=0 wm=0
  *
  * libavoid - Fast, Incremental, Object-avoiding Line Router
@@ -37,7 +37,7 @@
 
 #include "libavoid/geometry.h"
 #include "libavoid/connectionpin.h"
-
+#include "libavoid/dllexport.h"
 
 namespace Avoid {
 
@@ -53,7 +53,7 @@ typedef std::list<ConnRef *> ConnRefList;
 // @brief   The Obstacle class represents an obstacle that must be 
 //          routed around.  Superclass of ShapeRef and JunctionRef.
 //
-class Obstacle
+class AVOID_EXPORT Obstacle
 {
     public:
         //! @brief  Obstacle reference constructor.

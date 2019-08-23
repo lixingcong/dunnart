@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Dunnart - Constraint-based Diagram Editor
  *
  * Copyright (C) 2003-2007  Michael Wybrow
@@ -39,6 +39,8 @@
 #include <QUndoCommand>
 #include <QColor>
 #include <QElapsedTimer>
+
+#include "libdunnartcanvas/dllexport.h"
 
 class QToolBar;
 class QStatusBar;
@@ -103,7 +105,7 @@ enum loadPass
 };
 
 
-class Canvas : public QGraphicsScene
+class DUNNARTCANVAS_EXPORT Canvas : public QGraphicsScene
 {
     Q_OBJECT
 
@@ -491,8 +493,8 @@ class RoutingRequiredEvent : public QEvent
 };
 
 
-extern QRectF diagramBoundingRect(const QList<CanvasItem *>& list);
-extern QRectF expandRect(const QRectF& origRect, double amount);
+DUNNARTCANVAS_EXPORT QRectF diagramBoundingRect(const QList<CanvasItem *>& list);
+DUNNARTCANVAS_EXPORT QRectF expandRect(const QRectF& origRect, double amount);
 
 
 }
