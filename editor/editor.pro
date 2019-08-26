@@ -79,7 +79,7 @@ QMAKE_EXTRA_TARGETS += dunnart-osx.tar.gz
 
 linux-g++ {
 
-EXTRA_BINFILES += Dunnart.sh
+EXTRA_BINFILES += $$DUNNARTBASE/editor/Dunnart.sh
 for(FILE,EXTRA_BINFILES){
     QMAKE_POST_LINK += $$quote(cp $${FILE} $${DESTDIR}$$escape_expand(\\n\\t))
 }
