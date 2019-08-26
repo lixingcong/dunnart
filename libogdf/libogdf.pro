@@ -11,14 +11,20 @@ include(../common_options.qmake)
 CONFIG -= qt
 
 !win32{
-QMAKE_CXXFLAGS_DEBUG += -Wall -W -Wno-unused-parameter
-QMAKE_CXXFLAGS_RELEASE += -Wall -W -Wno-unused-parameter
+    QMAKE_CXXFLAGS_DEBUG += -Wall -W -Wno-unused-parameter
+    QMAKE_CXXFLAGS_RELEASE += -Wall -W -Wno-unused-parameter
 }
 
 win32 {
-LIBS += -Wl,--export-all-symbols -Wl,--no-whole-archive -lpsapi
+    LIBS += -lpsapi
 
-DEFINES+=OGDF_DLL OGDF_INSTALL
+    win32-g++:{
+	QMAKE_CXXFLAGS_DEBUG += -Wall -W -Wno-unused-parameter
+	QMAKE_CXXFLAGS_RELEASE += -Wall -W -Wno-unused-parameter
+	LIBS += -Wl,--export-all-symbols -Wl,--no-whole-archive
+    }
+
+    !win32-g++:{DEFINES+=OGDF_DLL OGDF_INSTALL}
 }
 
 # Input

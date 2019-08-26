@@ -27,4 +27,6 @@ HEADERS += assertions.h connector.h debug.h geometry.h geomtypes.h graph.h libav
     dllexport.h \
     hyperedgeimprover.h
 
-DEFINES+=LIBAVOID_EXPORTS
+win32{
+    !win32-g++ : { DEFINES += LIBAVOID_EXPORTS }
+}

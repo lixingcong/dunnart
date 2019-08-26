@@ -45,4 +45,6 @@ HEADERS += cola.h \
     pseudorandom.h \
     config.h
 
-DEFINES+=LIBCOLA_EXPORTS
+win32{
+    !win32-g++ : { DEFINES += LIBCOLA_EXPORTS }
+}

@@ -23,10 +23,10 @@ graphviz {
 }
 
 win32 {
-LIBS += -Wl,--export-all-symbols -Wl,--no-whole-archive
-DEFINES+=OGDF_DLL
-DEFINES+=LIBDUNNARTCANVAS_EXPORTS
+win32-g++ : { LIBS += -Wl,--export-all-symbols -Wl,--no-whole-archive }
+!win32-g++ : { DEFINES += OGDF_DLL LIBDUNNARTCANVAS_EXPORTS }
 }
+
 LIBS += -L$$DESTDIR -lavoid -lvpsc -ltopology -lcola -logdf
 
 # Input

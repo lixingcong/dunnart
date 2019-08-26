@@ -33,4 +33,6 @@ HEADERS += \
 	orthogonal_topology.h
 
 
-DEFINES+=LIBTOPOLOGY_EXPORTS
+win32{
+    !win32-g++ : { DEFINES += LIBTOPOLOGY_EXPORTS }
+}

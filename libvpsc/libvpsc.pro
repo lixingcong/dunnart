@@ -15,4 +15,6 @@ SOURCES += block.cpp blocks.cpp rectangle.cpp solve_VPSC.cpp constraint.cpp vari
 HEADERS += block.h blocks.h cbuffer.h constraint.h exceptions.h isnan.h linesegment.h pairing_heap.h rectangle.h solve_VPSC.h variable.h assertions.h \
 	dllexport.h
 
-DEFINES+=LIBVPSC_EXPORTS
+win32{
+    !win32-g++ : { DEFINES += LIBVPSC_EXPORTS }
+}
